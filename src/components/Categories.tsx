@@ -3,23 +3,36 @@ import { categoriesData } from "../data/menuData";
 
 const Categories = () => {
   const navigate = useNavigate();
-const serviceIcons = [
-  { name: 'Wedding Catering', icon: '💍' },
-  { name: 'Housewarming', icon: '🏠' },
-  { name: 'Kitty Party', icon: '🎉' },
-  { name: 'Outdoor Catering', icon: '⛺' },
-  { name: 'Birthday Catering', icon: '🎂' },
-  { name: 'Anniversary', icon: '❤️' },
-  { name: 'Family Parties', icon: '👨‍👩‍👧‍👦' },
-  { name: 'Pooja at Home', icon: '🪔' },
-  { name: 'Cultural Events', icon: '🎭' },
-];
+
+  const serviceIcons = [
+    { name: "Wedding Catering", icon: "💍" },
+    { name: "Housewarming", icon: "🏠" },
+    { name: "Kitty Party", icon: "🎉" },
+    { name: "Outdoor Catering", icon: "⛺" },
+    { name: "Birthday Catering", icon: "🎂" },
+    { name: "Anniversary", icon: "❤️" },
+    { name: "Family Parties", icon: "👨‍👩‍👧‍👦" },
+    { name: "Pooja at Home", icon: "🪔" },
+    { name: "Cultural Events", icon: "🎭" },
+  ];
+
+  const handleCategoryClick = (categoryId: string) => {
+    // ✅ Special handling only for Wedding
+    if (categoryId === "wedding") {
+      navigate("/wedding-plans"); // Veg / Non-Veg → Plan → PDF
+      return;
+    }
+
+    // ✅ Normal flow for all other categories
+    navigate(`/services/${categoryId}`);
+  };
+
   return (
     <section id="categories" className="py-20 bg-[#F6F4FB]">
       <div className="max-w-6xl mx-auto px-4">
-        
 
-         <div className="text-center mb-16">
+        {/* Services Icons */}
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Our <span className="text-[#3C1285]">Catering Services</span>
           </h2>
@@ -35,6 +48,8 @@ const serviceIcons = [
             ))}
           </div>
         </div>
+
+        {/* Category Selection */}
         <h2 className="text-4xl font-bold text-center mb-12">
           Choose <span className="text-[#3C1285]">Category</span>
         </h2>
@@ -43,7 +58,7 @@ const serviceIcons = [
           {categoriesData.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => navigate(`/services/${cat.id}`)}
+              onClick={() => handleCategoryClick(cat.id)}
               className="p-10 rounded-2xl bg-white shadow-lg hover:shadow-xl transition text-center"
             >
               <div className="text-5xl mb-4">{cat.icon}</div>

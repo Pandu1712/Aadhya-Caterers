@@ -13,11 +13,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
+   { name: 'Home', href: '/' },
+  { name: 'Services', href: '/categories' },
+  { name: 'About', href: '/about' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Contact', href: '/contact' },
+  {name:'Reviews',href:'https://www.google.com/search?sca_esv=c54719d661e4c3a9&rlz=1C1CHBD_enIN1128IN1128&sxsrf=AE3TifNl7vLmOUjGbj6yeksEltZqeJ294g:1766456748997&q=aadhya+caterers&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E37efH6aweGaAgikOLEZIc98BbKKrF4cqSJcGY8YS3tU8jcJR8zftqHiQFP2bB-tG2IhHfKbjSf0qmwYwvM5QvRQ1LxPVMEVCViO-wPt6-4eegcP2azMuTZ6rlSNY-ngShvkrSLkWCM84f4acUupwa5F_TTR&sa=X&ved=2ahUKEwjTzqOY1NKRAxWDRmwGHcrdHJQQrrQLegQIGxAB&biw=1536&bih=695&dpr=1.25'}
   ];
 
   const services = [
@@ -47,7 +48,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
              <div className=" p-2 rounded-full flex items-center justify-center">
   <img
-    src="./AadhyaLogo.png"   // 👈 change path if needed
+    src="https://res.cloudinary.com/dd4oiwnep/image/upload/AadhyaLogo_npj15z.png"   // 👈 change path if needed
     alt="Aadhya Caterers Logo"
     className="w-14 h-14 object-contain"
   />
@@ -131,13 +132,13 @@ const Footer = () => {
               <li className="flex items-start text-sm text-gray-600">
                 <Phone className="w-5 h-5 text-[#3C1285] mr-2 mt-0.5" />
                 <div>
-                  <div>+91 98765 43210</div>
-                  <div>+91 98765 43211</div>
+                  <div>+91 9494 055 353</div>
+                  <div>+91 9398 183 297</div>
                 </div>
               </li>
               <li className="flex items-start text-sm text-gray-600">
                 <Mail className="w-5 h-5 text-[#3C1285] mr-2 mt-0.5" />
-                info@aadhyacaterers.com
+                aadhyacaterers01.com
               </li>
               <li className="flex items-start text-sm text-gray-600">
                 <MapPin className="w-5 h-5 text-[#3C1285] mr-2 mt-0.5" />

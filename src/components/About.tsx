@@ -28,6 +28,13 @@ const About = () => {
     },
   ];
 
+  const stats = [
+    { value: '30+', label: 'Years of Experience' },
+    { value: '5000+', label: 'Events Catered' },
+    { value: '100%', label: 'Client Satisfaction' },
+    { value: '50+', label: 'Speciality Dishes' },
+  ];
+
   return (
     <section className="py-20 bg-[#F6F4FB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,10 +45,7 @@ const About = () => {
           {/* TEXT */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About{' '}
-              <span className="text-[#3C1285]">
-                Aadhya Caterers
-              </span>
+              About <span className="text-[#3C1285]">Aadhya Caterers</span>
             </h2>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
@@ -56,8 +60,7 @@ const About = () => {
             </p>
 
             {/* PROMISE */}
-            <div className="bg-gradient-to-r from-[#3C1285] to-[#5B3BBE]
-              text-white rounded-2xl p-6 shadow-md max-w-lg">
+            <div className="bg-gradient-to-r from-[#3C1285] to-[#5B3BBE] text-white rounded-2xl p-6 shadow-md max-w-lg">
               <p className="text-xl font-semibold mb-1">Our Promise</p>
               <p className="text-sm text-white/90">
                 Authentic taste, hygienic preparation, and service that truly honors traditions.
@@ -69,26 +72,24 @@ const About = () => {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               {[
-                'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
-                'https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=600',
-                'https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600',
-                'https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg?auto=compress&cs=tinysrgb&w=600',
+                "https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031544/WhatsApp_Image_2025-12-06_at_09.38.11_9edaad83_aslx3j.jpg",
+                "https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031546/WhatsApp_Image_2025-12-06_at_09.38.04_c62cd42b_reeb6q.jpg",
+                "https://svcaterers.com/wp-content/uploads/2025/10/gallery12.jpg",
+                "https://svcaterers.com/wp-content/uploads/2025/10/gallery14.jpg"
               ].map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt="Catering moments"
-                  className={`rounded-2xl object-cover h-64 w-full
-                  shadow-md hover:scale-105 transition
-                  ${i % 2 !== 0 ? 'mt-8' : ''}`}
+                  className={`rounded-2xl object-cover h-64 w-full shadow-md hover:scale-105 transition ${
+                    i % 2 !== 0 ? 'mt-8' : ''
+                  }`}
                 />
               ))}
             </div>
 
             {/* EXPERIENCE BADGE */}
-            <div className="absolute -bottom-6 -left-6
-              bg-[#3C1285] text-white
-              rounded-2xl p-6 shadow-xl">
+            <div className="absolute -bottom-6 -left-6 bg-[#3C1285] text-white rounded-2xl p-6 shadow-xl">
               <div className="text-4xl font-bold">15+</div>
               <div className="text-sm tracking-wide">Years of Experience</div>
             </div>
@@ -102,15 +103,11 @@ const About = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6
-                border border-[#E3DDF5]
-                hover:border-[#3C1285]
-                transition-all duration-300
-                hover:shadow-lg"
+                className="bg-white rounded-2xl p-6 border border-[#E3DDF5]
+                hover:border-[#3C1285] transition-all duration-300 hover:shadow-lg"
               >
-                <div className="w-14 h-14 rounded-xl
-                  bg-gradient-to-br from-[#3C1285] to-[#5B3BBE]
-                  flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#3C1285] to-[#5B3BBE]
+                flex items-center justify-center mb-4">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -123,6 +120,34 @@ const About = () => {
             );
           })}
         </div>
+
+        {/* ================= STATS (2×2 GRID – BOTTOM) ================= */}
+        {/* ================= STATS (RESPONSIVE) ================= */}
+<div className="mt-20 flex justify-center">
+  <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+    {stats.map((item, i) => (
+      <div
+        key={i}
+        className="
+          bg-gradient-to-br from-[#3C1285] to-[#5B3BBE]
+          text-white
+          rounded-2xl
+          p-8
+          text-center
+          shadow-lg
+        "
+      >
+        <div className="text-3xl sm:text-4xl font-bold mb-2">
+          {item.value}
+        </div>
+        <div className="text-sm sm:text-base text-white/90">
+          {item.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
 
       </div>
     </section>

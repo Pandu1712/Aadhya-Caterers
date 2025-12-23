@@ -6,6 +6,7 @@ import Reviews from './Reviews';
 import About from './About';
 import Contact from './Contact';
 import Categories from './Categories';
+import TermsAndConditions from './TermsAndConditions';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,20 +16,17 @@ const Hero = () => {
       title: 'Traditional Indian Catering',
       subtitle: 'Authentic flavors for your special occasions',
       image:
-        'https://images.pexels.com/photos/1861785/pexels-photo-1861785.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    },
+"https://www.kanakamahalakshmicatering.com/extra-images/gallery/ga1.jpg"    },
     {
       title: 'Wedding Specialists',
       subtitle: 'Making your big day memorable with exquisite cuisine',
       image:
-        'https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    },
+"https://webestcateringservices.com/wp-content/uploads/al_opt_content/IMAGE/webestcateringservices.com/wp-content/uploads/2024/06/catering-services-in-vizag.jpeg.bv.webp?bv_host=webestcateringservices.com"    },
     {
       title: 'Royal Biryani Experience',
       subtitle: 'Aromatic spices and premium ingredients',
       image:
-        'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    },
+"https://svcaterers.com/wp-content/uploads/2025/10/gallery14.jpg"    },
   ];
 
   useEffect(() => {
@@ -102,20 +100,7 @@ const Hero = () => {
               </div>
 
               {/* STATS */}
-              <div className="mt-14 grid grid-cols-3 gap-6 text-center lg:text-left max-w-md">
-                {[
-                  { label: 'Events', value: '500+' },
-                  { label: 'Dishes', value: '50+' },
-                  { label: 'Quality', value: '100%' },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="text-3xl font-bold text-white">{item.value}</div>
-                    <div className="text-xs text-white/70 tracking-wide">
-                      {item.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
+             
 
             </div>
           </div>
@@ -140,6 +125,7 @@ const Hero = () => {
       {/* ================= GALLERY SECTION ================= */}
       <About/>
        <Categories/>
+       <TermsAndConditions/>
       <Gallery />
      
       <Reviews/>

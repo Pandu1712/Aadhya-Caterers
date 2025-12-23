@@ -1,29 +1,43 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import { categoriesData, Category, Plan } from "../data/menuData";
 
 const Services = () => {
-  const { categoryId } = useParams();
+  const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
 
-  const category = categoriesData.find(
+  const category: Category | undefined = categoriesData.find(
     (c) => c.id === categoryId
-  ) as Category;
+  );
 
-  if (!category) {
-    navigate("/");
+  /* ---------------- SAFE REDIRECT ---------------- */
+  useEffect(() => {
+    if (!category) {
+      navigate("/");
+    }
+  }, [category, navigate]);
+
+  if (!category || !category.plans || category.plans.length === 0) {
     return null;
   }
 
-  const [selectedPlan, setSelectedPlan] = useState<Plan>(
-    category.plans[0]
+  /* ---------------- SAFE STATE INIT ---------------- */
+  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(
+    category.plans[0] ?? null
   );
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
+  if (!selectedPlan) {
+    return null;
+  }
+
+  /* ---------------- HANDLERS ---------------- */
   const toggleItem = (id: string) => {
     setSelectedItems((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+      prev.includes(id)
+        ? prev.filter((x) => x !== id)
+        : [...prev, id]
     );
   };
 
@@ -34,23 +48,28 @@ const Services = () => {
     message += `*Category:* ${category.name}\n`;
     message += `*Plan:* ${selectedPlan.name}\n\n`;
 
-    selectedPlan.items.forEach((sec) => {
+    selectedPlan.items?.forEach((sec) => {
       const chosen = sec.items.filter((i) =>
         selectedItems.includes(i.id)
       );
+
       if (chosen.length > 0) {
         message += `*${sec.category}:*\n`;
-        chosen.forEach((i) => (message += `• ${i.name}\n`));
+        chosen.forEach((i) => {
+          message += `• ${i.name}\n`;
+        });
         message += `\n`;
       }
     });
 
     window.open(
       `https://wa.me/919876543210?text=${encodeURIComponent(message)}`,
-      "_blank"
+      "_blank",
+      "noopener,noreferrer"
     );
   };
 
+  /* ---------------- UI ---------------- */
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#F6F4FB]">
       <div className="max-w-7xl mx-auto px-4 mt-8">
@@ -89,11 +108,12 @@ const Services = () => {
 
         {/* ITEMS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-white p-6 sm:p-8 rounded-3xl shadow-lg">
-          {selectedPlan.items.map((sec) => (
+          {selectedPlan.items?.map((sec) => (
             <div key={sec.category} className="border rounded-xl p-4">
               <h4 className="font-semibold mb-3 text-[#3C1285]">
                 {sec.category}
               </h4>
+
               {sec.items.map((item) => (
                 <label
                   key={item.id}
@@ -111,6 +131,7 @@ const Services = () => {
           ))}
         </div>
 
+        {/* WHATSAPP */}
         {selectedItems.length > 0 && (
           <div className="text-center mt-10">
             <button

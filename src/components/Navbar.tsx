@@ -42,7 +42,7 @@ const navLinks = [
   aria-label="Go to Home"
 >
   <img
-    src="./AadhyaLogo.png"
+    src="https://res.cloudinary.com/dd4oiwnep/image/upload/AadhyaLogo_npj15z.png"
     alt="Aadhya Caterers"
     className="h-14 w-14 object-contain rounded-full"
   />
@@ -74,7 +74,7 @@ const navLinks = [
           {/* DESKTOP CALL */}
           <div className="hidden md:flex">
             <a
-              href="tel:+919999999999"
+              href="tel:+919398183297"
               className="flex items-center gap-2 px-5 py-2 rounded-full
               bg-[#3C1285] text-white text-sm font-semibold
               hover:bg-[#2a0d5c] transition"
@@ -87,7 +87,7 @@ const navLinks = [
           {/* MOBILE ACTIONS */}
           <div className="flex items-center gap-4 md:hidden">
             <a
-              href="tel:+919999999999"
+              href="tel:+919398183297"
               className="p-2 rounded-full bg-[#3C1285] text-white"
               aria-label="Call Now"
             >

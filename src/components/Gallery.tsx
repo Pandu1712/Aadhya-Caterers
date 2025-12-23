@@ -6,40 +6,38 @@ const Gallery = () => {
 
   const images = [
     {
-      url: 'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Royal Biryani',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery10.jpeg',
+   
     },
     {
-      url: 'https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Traditional Thali',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery14.jpg',
+   
     },
     {
-      url: 'https://images.pexels.com/photos/1861785/pexels-photo-1861785.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Indian Sweets',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery13.jpg',
     },
     {
-      url: 'https://images.pexels.com/photos/4449064/pexels-photo-4449064.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Paneer Tikka',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery9.jpg',
     },
     {
-      url: 'https://images.pexels.com/photos/2871757/pexels-photo-2871757.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Butter Chicken',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery8.jpg',
+    
     },
     {
-      url: 'https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Dal Makhani',
+      url: 'https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031545/WhatsApp_Image_2025-12-06_at_09.38.05_3463ee08_ijfbiz.jpg',
+     
     },
     {
-      url: 'https://images.pexels.com/photos/6210747/pexels-photo-6210747.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Wedding Feast',
+      url: 'https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031546/WhatsApp_Image_2025-12-06_at_09.38.05_b5595bee_qr6qeq.jpg',
+    
     },
     {
-      url: 'https://images.pexels.com/photos/5410400/pexels-photo-5410400.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Catering Arrangement',
+      url: 'https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031546/WhatsApp_Image_2025-12-06_at_09.38.04_035c9d76_s3hh4m.jpg',
+    
     },
     {
-      url: 'https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=800',
-      alt: 'Freshly Baked Naan',
+      url: 'https://svcaterers.com/wp-content/uploads/2025/10/gallery7.webp',
+   
     },
   ];
 
@@ -71,7 +69,7 @@ const Gallery = () => {
               <div className="relative aspect-square overflow-hidden">
                 <img
                   src={image.url}
-                  alt={image.alt}
+        
                   className="w-full h-full object-cover
                   group-hover:scale-105 transition-transform duration-500"
                 />
@@ -81,7 +79,7 @@ const Gallery = () => {
                   group-hover:opacity-100 transition-opacity duration-300
                   flex items-end">
                   <p className="text-white text-sm font-medium p-4">
-                    {image.alt}
+                  
                   </p>
                 </div>
               </div>

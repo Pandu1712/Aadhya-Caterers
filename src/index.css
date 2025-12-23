@@ -9,6 +9,7 @@
 
   body {
     @apply antialiased;
+    background-color: #9f86e0; /* light version of #3C1285 */
   }
 }
 

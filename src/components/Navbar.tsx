@@ -1,104 +1,146 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, UtensilsCrossed } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
-  ];
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'About', href: '/about' },
+  { name: 'Gallery', href: '/gallery' },
+  { name: 'Contact', href: '/contact' },
+];
+
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+    <>
+      {/* ================= NAVBAR ================= */}
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300
+        ${scrolled ? 'bg-white shadow-sm border-b border-gray-100' : 'bg-transparent'}
+        `}
+      >
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+
+          {/* LOGO */}
+          <div className="flex items-center gap-2">
+           <Link
+  to="/"
+  className="flex items-center gap-2 cursor-pointer"
+  aria-label="Go to Home"
+>
+  <img
+    src="./AadhyaLogo.png"
+    alt="Aadhya Caterers"
+    className="h-14 w-14 object-contain rounded-full"
+  />
+  <span className="hidden md:block text-lg font-semibold text-[#3C1285] tracking-wide">
+    Aadhya Caterers
+  </span>
+</Link>
+
+          </div>
+
+          {/* DESKTOP LINKS */}
+         <nav className="hidden md:flex gap-8 text-sm font-medium">
+  {navLinks.map((link) => (
+    <a
+      key={link.name}
+      href={link.href}
+      className={`transition ${
         scrolled
-          ? 'bg-white shadow-lg py-3'
-          : 'bg-gradient-to-b from-black/70 to-transparent py-5'
+          ? 'text-black hover:text-[#3C1285]'
+          : 'text-black hover:text-[#3C1285]'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="bg-gradient-to-br from-orange-500 to-red-600 p-2 rounded-full transform group-hover:rotate-12 transition-transform duration-300">
-              <UtensilsCrossed className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1
-                className={`text-2xl font-bold ${
-                  scrolled
-                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600'
-                    : 'text-white'
-                }`}
-              >
-                Spice Caterings
-              </h1>
-              <p
-                className={`text-xs ${scrolled ? 'text-gray-600' : 'text-orange-200'}`}
-              >
-                Traditional Taste
-              </p>
-            </div>
+      {link.name}
+    </a>
+  ))}
+</nav>
+
+
+          {/* DESKTOP CALL */}
+          <div className="hidden md:flex">
+            <a
+              href="tel:+919999999999"
+              className="flex items-center gap-2 px-5 py-2 rounded-full
+              bg-[#3C1285] text-white text-sm font-semibold
+              hover:bg-[#2a0d5c] transition"
+            >
+              <Phone size={16} />
+              Call Now
+            </a>
           </div>
 
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`relative font-medium transition-colors duration-300 group ${
-                  scrolled
-                    ? 'text-gray-700 hover:text-orange-600'
-                    : 'text-white hover:text-orange-400'
-                }`}
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-600 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
-          </div>
+          {/* MOBILE ACTIONS */}
+          <div className="flex items-center gap-4 md:hidden">
+            <a
+              href="tel:+919999999999"
+              className="p-2 rounded-full bg-[#3C1285] text-white"
+              aria-label="Call Now"
+            >
+              <Phone size={18} />
+            </a>
 
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'}`} />
-            ) : (
-              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white'}`} />
-            )}
-          </button>
+            <button onClick={() => setIsOpen(true)} aria-label="Open menu">
+              <Menu size={26} className="text-gray-800" />
+            </button>
+          </div>
         </div>
+      </header>
 
-        {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 bg-white rounded-lg shadow-xl p-4">
+      {/* ================= MOBILE SIDE NAV ================= */}
+      <div className={`fixed inset-0 z-50 ${isOpen ? 'visible' : 'invisible'}`}>
+        {/* Overlay */}
+        <div
+          className={`absolute inset-0 bg-black/30 transition-opacity
+          ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setIsOpen(false)}
+        />
+
+        {/* Drawer */}
+        <div
+          className={`absolute right-0 top-0 h-full w-72 bg-white
+          transform transition-transform duration-300
+          ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          {/* Header */}
+          <div className="h-16 flex items-center justify-between px-4 border-b">
+            <span className="text-lg font-semibold text-[#3C1285]">
+              Menu
+            </span>
+            <button onClick={() => setIsOpen(false)}>
+              <X size={24} />
+            </button>
+          </div>
+
+          {/* Links */}
+          <nav className="flex flex-col px-6 py-6 gap-6 text-gray-700 font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="block text-gray-700 hover:text-orange-600 font-medium transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
+                className="hover:text-[#3C1285]"
               >
                 {link.name}
               </a>
             ))}
-          </div>
-        )}
+          </nav>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

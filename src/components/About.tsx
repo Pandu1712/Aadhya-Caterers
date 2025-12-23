@@ -5,101 +5,125 @@ const About = () => {
     {
       icon: Users,
       title: 'Expert Chefs',
-      description: 'Skilled culinary professionals with decades of experience in traditional cuisine',
+      description:
+        'Highly skilled chefs with deep knowledge of traditional Indian cuisine and modern presentation.',
     },
     {
       icon: Award,
-      title: 'Quality Ingredients',
-      description: 'Only the finest and freshest ingredients sourced from trusted suppliers',
+      title: 'Premium Ingredients',
+      description:
+        'Fresh, high-quality ingredients sourced carefully to maintain authentic taste and hygiene.',
     },
     {
       icon: Clock,
-      title: 'Timely Service',
-      description: 'Punctual delivery and setup, ensuring your event runs smoothly',
+      title: 'Timely Execution',
+      description:
+        'Well-planned service and punctual delivery ensuring smooth and stress-free events.',
     },
     {
       icon: ThumbsUp,
-      title: 'Customer Satisfaction',
-      description: '100% satisfaction guaranteed with every catering service',
+      title: 'Trusted by Families',
+      description:
+        'A reputation built on trust, consistency, and customer satisfaction across generations.',
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section className="py-20 bg-[#F6F4FB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+        {/* ================= TOP CONTENT ================= */}
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+          {/* TEXT */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               About{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                Spice Caterings
+              <span className="text-[#3C1285]">
+                Aadhya Caterers
               </span>
             </h2>
+
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              With over 15 years of experience in the catering industry, Spice Caterings has become
-              synonymous with authentic traditional Indian cuisine and impeccable service. We
-              specialize in bringing the rich flavors of India to your special occasions.
+              With more than <strong>15 years of excellence</strong>, Aadhya Caterers
+              has become a trusted name for traditional Indian catering. Our journey
+              is rooted in authentic flavors, time-honored recipes, and heartfelt hospitality.
             </p>
+
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              From intimate family gatherings to grand wedding celebrations, our team is dedicated
-              to making every event memorable through exceptional food quality, presentation, and
-              hospitality.
+              From intimate family functions to grand weddings, we bring passion,
+              precision, and cultural richness to every celebration we serve.
             </p>
-            <div className="bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-2xl p-6 shadow-xl">
-              <p className="text-xl font-semibold mb-2">Our Promise</p>
-              <p className="text-orange-100">
-                Authentic taste, hygienic preparation, and service that exceeds expectations.
+
+            {/* PROMISE */}
+            <div className="bg-gradient-to-r from-[#3C1285] to-[#5B3BBE]
+              text-white rounded-2xl p-6 shadow-md max-w-lg">
+              <p className="text-xl font-semibold mb-1">Our Promise</p>
+              <p className="text-sm text-white/90">
+                Authentic taste, hygienic preparation, and service that truly honors traditions.
               </p>
             </div>
           </div>
 
+          {/* IMAGES */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Traditional cooking"
-                className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 h-64 w-full object-cover"
-              />
-              <img
-                src="https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Chef preparing food"
-                className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 h-64 w-full object-cover mt-8"
-              />
-              <img
-                src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Food presentation"
-                className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 h-64 w-full object-cover"
-              />
-              <img
-                src="https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Catering service"
-                className="rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 h-64 w-full object-cover mt-8"
-              />
+              {[
+                'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600',
+                'https://images.pexels.com/photos/735869/pexels-photo-735869.jpeg?auto=compress&cs=tinysrgb&w=600',
+              ].map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt="Catering moments"
+                  className={`rounded-2xl object-cover h-64 w-full
+                  shadow-md hover:scale-105 transition
+                  ${i % 2 !== 0 ? 'mt-8' : ''}`}
+                />
+              ))}
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-2xl p-6 shadow-2xl">
+
+            {/* EXPERIENCE BADGE */}
+            <div className="absolute -bottom-6 -left-6
+              bg-[#3C1285] text-white
+              rounded-2xl p-6 shadow-xl">
               <div className="text-4xl font-bold">15+</div>
-              <div className="text-sm">Years Experience</div>
+              <div className="text-sm tracking-wide">Years of Experience</div>
             </div>
           </div>
         </div>
 
+        {/* ================= FEATURES ================= */}
         <div className="mt-20 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2"
+                className="bg-white rounded-2xl p-6
+                border border-[#E3DDF5]
+                hover:border-[#3C1285]
+                transition-all duration-300
+                hover:shadow-lg"
               >
-                <div className="bg-gradient-to-br from-orange-500 to-red-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="w-14 h-14 rounded-xl
+                  bg-gradient-to-br from-[#3C1285] to-[#5B3BBE]
+                  flex items-center justify-center mb-4">
+                  <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {feature.description}
+                </p>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

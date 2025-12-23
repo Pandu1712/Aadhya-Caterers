@@ -79,7 +79,7 @@ const Hero = () => {
               {/* BUTTONS */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
-                  to="/services"
+                  to="/categories"
                   className="inline-flex items-center justify-center gap-2
                     px-8 py-4 rounded-full
                     bg-white text-[#3C1285] font-semibold

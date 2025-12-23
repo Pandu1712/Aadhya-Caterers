@@ -90,7 +90,7 @@ const navLinks = [
               className="p-2 rounded-full bg-[#3C1285] text-white"
               aria-label="Call Now"
             >
-              <Phone size={18} />
+              <Phone size={24} />
             </a>
 
             <button onClick={() => setIsOpen(true)} aria-label="Open menu">

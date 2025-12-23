@@ -45,21 +45,14 @@ const Footer = () => {
           {/* BRAND */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-[#3C1285] p-2 rounded-full">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  />
-                </svg>
-              </div>
+             <div className=" p-2 rounded-full flex items-center justify-center">
+  <img
+    src="./AadhyaLogo.png"   // 👈 change path if needed
+    alt="Aadhya Caterers Logo"
+    className="w-14 h-14 object-contain"
+  />
+</div>
+
               <div>
                 <h3 className="text-xl font-semibold text-[#3C1285]">
                   Aadhya Caterers

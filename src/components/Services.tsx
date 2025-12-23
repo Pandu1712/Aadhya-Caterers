@@ -11,7 +11,11 @@ const Services = () => {
     (c) => c.id === categoryId
   ) as Category;
 
-  // DEFAULT PLAN AUTO SELECT
+  if (!category) {
+    navigate("/");
+    return null;
+  }
+
   const [selectedPlan, setSelectedPlan] = useState<Plan>(
     category.plans[0]
   );
@@ -24,10 +28,7 @@ const Services = () => {
   };
 
   const sendToWhatsApp = () => {
-    if (selectedItems.length === 0) {
-      alert("Please select items");
-      return;
-    }
+    if (selectedItems.length === 0) return;
 
     let message = `*Aadhya Caterers – Order Enquiry*\n\n`;
     message += `*Category:* ${category.name}\n`;
@@ -51,23 +52,23 @@ const Services = () => {
   };
 
   return (
-    <section className="py-20 bg-[#F6F4FB]">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-12 sm:py-16 lg:py-20 bg-[#F6F4FB]">
+      <div className="max-w-7xl mx-auto px-4 mt-8">
 
         {/* BACK */}
         <button
           onClick={() => navigate("/")}
-          className="mb-8 text-[#3C1285] font-semibold"
+          className="mb-6 text-[#3C1285] font-semibold"
         >
           ← Back to Categories
         </button>
 
-        <h2 className="text-3xl font-bold text-center mb-10 text-[#3C1285]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-[#3C1285]">
           {category.name} Plans
         </h2>
 
         {/* PLANS */}
-        <div className="flex justify-center gap-6 mb-14">
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
           {category.plans.map((plan) => (
             <button
               key={plan.id}
@@ -75,7 +76,7 @@ const Services = () => {
                 setSelectedPlan(plan);
                 setSelectedItems([]);
               }}
-              className={`px-8 py-3 rounded-full font-semibold border transition ${
+              className={`px-6 py-3 rounded-full font-semibold border transition ${
                 selectedPlan.id === plan.id
                   ? "bg-[#3C1285] text-white"
                   : "bg-white hover:bg-[#3C1285] hover:text-white"
@@ -87,7 +88,7 @@ const Services = () => {
         </div>
 
         {/* ITEMS */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 bg-white p-8 rounded-3xl shadow-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 bg-white p-6 sm:p-8 rounded-3xl shadow-lg">
           {selectedPlan.items.map((sec) => (
             <div key={sec.category} className="border rounded-xl p-4">
               <h4 className="font-semibold mb-3 text-[#3C1285]">
@@ -111,17 +112,16 @@ const Services = () => {
         </div>
 
         {selectedItems.length > 0 && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <button
               onClick={sendToWhatsApp}
-              className="px-10 py-4 bg-[#3C1285] text-white rounded-full flex items-center gap-2 mx-auto"
+              className="px-8 py-3 bg-[#3C1285] text-white rounded-full flex items-center gap-2 mx-auto"
             >
               <Send className="w-5 h-5" />
               Send to WhatsApp
             </button>
           </div>
         )}
-
       </div>
     </section>
   );

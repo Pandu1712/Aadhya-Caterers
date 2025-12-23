@@ -3,6 +3,9 @@ import { ChefHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Gallery from './Gallery'; // ✅ IMPORT
 import Reviews from './Reviews';
+import About from './About';
+import Contact from './Contact';
+import Categories from './Categories';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -135,8 +138,12 @@ const Hero = () => {
       </section>
 
       {/* ================= GALLERY SECTION ================= */}
+      <About/>
+       <Categories/>
       <Gallery />
+     
       <Reviews/>
+      <Contact/>
     </>
   );
 };

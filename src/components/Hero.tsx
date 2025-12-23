@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ChefHat } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Gallery from './Gallery'; // ✅ IMPORT
+import Reviews from './Reviews';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -135,6 +136,7 @@ const Hero = () => {
 
       {/* ================= GALLERY SECTION ================= */}
       <Gallery />
+      <Reviews/>
     </>
   );
 };

@@ -20,6 +20,7 @@ const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Gallery', href: '/gallery' },
   { name: 'Contact', href: '/contact' },
+  {name:'Reviews',href:'https://www.google.com/search?sca_esv=c54719d661e4c3a9&rlz=1C1CHBD_enIN1128IN1128&sxsrf=AE3TifNl7vLmOUjGbj6yeksEltZqeJ294g:1766456748997&q=aadhya+caterers&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E37efH6aweGaAgikOLEZIc98BbKKrF4cqSJcGY8YS3tU8jcJR8zftqHiQFP2bB-tG2IhHfKbjSf0qmwYwvM5QvRQ1LxPVMEVCViO-wPt6-4eegcP2azMuTZ6rlSNY-ngShvkrSLkWCM84f4acUupwa5F_TTR&sa=X&ved=2ahUKEwjTzqOY1NKRAxWDRmwGHcrdHJQQrrQLegQIGxAB&biw=1536&bih=695&dpr=1.25'}
 ];
 
 

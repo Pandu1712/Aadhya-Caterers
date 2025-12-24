@@ -64,7 +64,7 @@ const Services = () => {
     });
 
     window.open(
-      `https://wa.me/919876543210?text=${encodeURIComponent(message)}`,
+      `https://wa.me/919398183297?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer"
     );

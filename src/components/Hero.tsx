@@ -125,7 +125,7 @@ const Hero = () => {
       {/* ================= GALLERY SECTION ================= */}
       <About/>
        <Categories/>
-       <TermsAndConditions/>
+     
       <Gallery />
      
       <Reviews/>

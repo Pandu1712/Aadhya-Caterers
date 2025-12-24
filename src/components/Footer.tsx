@@ -30,10 +30,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#' },
-    { icon: Instagram, href: '#' },
-    { icon: Twitter, href: '#' },
-    { icon: Youtube, href: '#' },
+    { icon: Facebook, href: 'https://www.facebook.com/people/Aadhyacaterers/100083312080646/' },
+    { icon: Instagram, href: 'https://www.instagram.com/aadhyacaterers/' },
+    { icon: Twitter, href: 'https://x.com/aadhyacaterers' },
+    { icon: Youtube, href: 'https://youtube.com/@aadhyacaterers?si=mG8IAcJmoEVnv6fV' },
   ];
 
   return (

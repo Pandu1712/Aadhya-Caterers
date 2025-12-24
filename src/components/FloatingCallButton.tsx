@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 
 const FloatingCallButton = () => {
-  const phoneNumber = "919876543210"; // change to your number
+  const phoneNumber = "919398183297"; // change to your number
 
   return (
     <a

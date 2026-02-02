@@ -16,17 +16,17 @@ const Hero = () => {
       title: 'Traditional Indian Catering',
       subtitle: 'Authentic flavors for your special occasions',
       image:
-"https://www.kanakamahalakshmicatering.com/extra-images/gallery/ga1.jpg"    },
+"https://res.cloudinary.com/dyfkwasrl/image/upload/v1770049756/WhatsApp_Image_2026-02-02_at_15.48.28_1_qlhpmk.jpg"    },
     {
       title: 'Wedding Specialists',
       subtitle: 'Making your big day memorable with exquisite cuisine',
       image:
-"https://webestcateringservices.com/wp-content/uploads/al_opt_content/IMAGE/webestcateringservices.com/wp-content/uploads/2024/06/catering-services-in-vizag.jpeg.bv.webp?bv_host=webestcateringservices.com"    },
+"https://res.cloudinary.com/dyfkwasrl/image/upload/v1770049757/WhatsApp_Image_2026-02-02_at_15.48.28_slp38s.jpg"    },
     {
       title: 'Royal Biryani Experience',
       subtitle: 'Aromatic spices and premium ingredients',
       image:
-"https://svcaterers.com/wp-content/uploads/2025/10/gallery14.jpg"    },
+"https://res.cloudinary.com/dyfkwasrl/image/upload/v1770049757/WhatsApp_Image_2026-02-02_at_15.48.28_2_gkpun9.jpg"    },
   ];
 
   useEffect(() => {

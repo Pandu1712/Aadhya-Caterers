@@ -28,11 +28,11 @@ const Gallery = () => {
      
     },
     {
-      url: 'https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031546/WhatsApp_Image_2025-12-06_at_09.38.05_b5595bee_qr6qeq.jpg',
+      url: 'https://res.cloudinary.com/dyfkwasrl/image/upload/v1770049757/WhatsApp_Image_2026-02-02_at_15.48.28_slp38s.jpg',
     
     },
     {
-      url: 'https://res.cloudinary.com/dd4oiwnep/image/upload/v1765031546/WhatsApp_Image_2025-12-06_at_09.38.04_035c9d76_s3hh4m.jpg',
+      url: 'https://res.cloudinary.com/dyfkwasrl/image/upload/v1770049756/WhatsApp_Image_2026-02-02_at_15.48.28_1_qlhpmk.jpg',
     
     },
     {
